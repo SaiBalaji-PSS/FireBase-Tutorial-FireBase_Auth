@@ -8,6 +8,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,6 +20,7 @@ import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, OnCompleteListener<AuthResult> {
 EditText username,password;
+TextView olduser;
 Button signup;
     private FirebaseAuth mAuth;
 
@@ -29,13 +31,19 @@ Button signup;
         username=(EditText)findViewById(R.id.editText);
         password=(EditText)findViewById(R.id.editText2);
         signup=(Button)findViewById(R.id.button);
+        olduser=(TextView)findViewById(R.id.textView3);
         mAuth = FirebaseAuth.getInstance();
+        olduser.setOnClickListener(this);
         signup.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
+        if(v.getId()==R.id.textView3)
+        {
+            Toast.makeText(this, "This feature is comming soon", Toast.LENGTH_SHORT).show();
+        }
         registeruser();
     }
 
