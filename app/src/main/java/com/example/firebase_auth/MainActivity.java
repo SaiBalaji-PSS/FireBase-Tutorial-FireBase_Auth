@@ -46,7 +46,7 @@ ProgressBar prog;
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.textView3)
-        {
+        {   finish();
             Intent i = new Intent(this,Signinpage.class);
             startActivity(i);
             return;

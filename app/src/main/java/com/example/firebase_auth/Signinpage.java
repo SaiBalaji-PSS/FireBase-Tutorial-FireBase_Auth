@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -37,7 +38,12 @@ public class Signinpage extends AppCompatActivity implements View.OnClickListene
        if(v.getId()==R.id.button2)
        {
            siginuser();
+
+
+
+
        }
+
     }
 
     void siginuser()
@@ -85,15 +91,13 @@ public class Signinpage extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onComplete(@NonNull Task<AuthResult> task) {
         if(task.isSuccessful())
-        {
-            AlertDialog.Builder  builder = new AlertDialog.Builder(this);
-            builder.setMessage("Welcome::"+email.getText().toString());
-            builder.setPositiveButton("Ok",null);
-            builder.setIcon(R.drawable.loginlogo);
-            builder.setTitle("Login success");
+        {   finish();
+            Intent i = new Intent(this,profileactivity.class);
 
-            AlertDialog dialog = builder.create();
-            dialog.show();
+            startActivity(i);
+
+
+
 
         }
         else

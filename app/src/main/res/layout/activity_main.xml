@@ -24,13 +24,13 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="241dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="292dp"
-        android:background="#26ae60"
+        android:layout_width="279dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
 
+        android:layout_marginTop="316dp"
+        android:background="#26ae60"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
@@ -39,11 +39,9 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="268dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginTop="504dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="496dp"
         android:background="#F4C724"
         android:text="Sign up"
         android:textSize="20dp"
@@ -52,12 +50,12 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="227dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="396dp"
+        android:layout_width="279dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="68dp"
 
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="396dp"
         android:background="#26ae60"
         android:ems="10"
         android:hint="Password"
