@@ -8,6 +8,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 EditText username,password;
 TextView olduser;
 Button signup;
+ProgressBar prog;
     private FirebaseAuth mAuth;
 
     @Override
@@ -32,6 +34,7 @@ Button signup;
         password=(EditText)findViewById(R.id.editText2);
         signup=(Button)findViewById(R.id.button);
         olduser=(TextView)findViewById(R.id.textView3);
+        prog=(ProgressBar)findViewById(R.id.progressBar);
         mAuth = FirebaseAuth.getInstance();
         olduser.setOnClickListener(this);
         signup.setOnClickListener(this);
@@ -78,6 +81,7 @@ Button signup;
            return;
        }
 
+        prog.setVisibility(View.VISIBLE);
        mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(this);
 
     }
@@ -86,8 +90,12 @@ Button signup;
     public void onComplete(@NonNull Task<AuthResult> task) {
 
         if(task.isSuccessful())
-        {
+        {  prog.setVisibility(View.GONE);
             Toast.makeText(this, "Account created successfully", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(this,"An error as occurred",Toast.LENGTH_SHORT).show();
         }
 
     }
