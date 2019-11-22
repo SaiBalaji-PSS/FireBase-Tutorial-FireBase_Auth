@@ -3,6 +3,7 @@ package com.example.firebase_auth;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 import java.util.regex.Pattern;
 
@@ -45,7 +47,9 @@ ProgressBar prog;
     public void onClick(View v) {
         if(v.getId()==R.id.textView3)
         {
-            Toast.makeText(this, "This feature is comming soon", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(this,Signinpage.class);
+            startActivity(i);
+            return;
         }
         registeruser();
     }
@@ -89,14 +93,15 @@ ProgressBar prog;
     @Override
     public void onComplete(@NonNull Task<AuthResult> task) {
 
-        if(task.isSuccessful())
-        {  prog.setVisibility(View.GONE);
-            Toast.makeText(this, "Account created successfully", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-            Toast.makeText(this,"An error as occurred",Toast.LENGTH_SHORT).show();
-        }
+       if(task.isSuccessful())
+       {  prog.setVisibility(View.GONE);
+           Toast.makeText(this, "Account created successfully", Toast.LENGTH_SHORT).show();
+       }
+        else if(task.getException() instanceof FirebaseAuthUserCollisionException)
+       {   prog.setVisibility(View.GONE);
+           Toast.makeText(this, "This user is already registered", Toast.LENGTH_SHORT).show();
+       }
+
 
     }
 }
