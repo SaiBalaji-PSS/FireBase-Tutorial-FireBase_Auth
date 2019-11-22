@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#45CE30"
     tools:context=".MainActivity">
 
     <TextView
@@ -16,6 +17,8 @@
         android:layout_marginTop="136dp"
         android:text="Create new Account"
         android:textSize="20dp"
+        android:textColor="#FAC42F"
+        android:fontFamily="monospace"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,6 +29,8 @@
         android:layout_marginStart="84dp"
         android:layout_marginLeft="84dp"
         android:layout_marginTop="292dp"
+        android:background="#26ae60"
+
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
@@ -34,12 +39,14 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="564dp"
+        android:layout_width="270dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="568dp"
+        android:background="#F4C724"
         android:text="Sign up"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,6 +56,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="90dp"
         android:layout_marginLeft="90dp"
+        android:background="#26ae60"
+
         android:layout_marginTop="435dp"
         android:ems="10"
         android:hint="Password"
